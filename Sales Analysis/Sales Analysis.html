@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Sales Data Analysis</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f7f7f7;
+        }
+
+        .container {
+            max-width: 800px;
+            margin: 50px auto;
+            padding: 20px;
+            background-color: #fff;
+            border-radius: 5px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        }
+
+        .container img {
+          max-width: 50%;
+          height: auto;
+          display: block;
+          margin: 0 auto; /* Center the image horizontally */
+        }
+
+
+        .container2 img {
+          max-width: 100%;
+          height: auto;
+          display: block;
+          margin: 0 auto; /* Center the image horizontally */
+
+        h1 {
+            color: #333;
+            font-size: 28px;
+            margin-bottom: 20px;
+        }
+
+        h2 {
+            color: #333;
+            font-size: 24px;
+            margin-bottom: 15px;
+        }
+
+        p {
+            line-height: 1.6;
+            margin-bottom: 10px;
+        }
+
+        .section {
+            margin-bottom: 30px;
+        }
+
+        .section-title {
+            font-size: 20px;
+            font-weight: bold;
+            margin-bottom: 10px;
+        }
+
+        .section-content {
+            margin-left: 20px;
+        }
+    </style>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.24.1/themes/prism.min.css">
+</head>
+<body>
+    <div class="container">
+        <h1>Sales Data Analysis</h1>
+
+        <div class="section">
+            <p>Author: Isaac Ikhaiduwor</p>
+            <p>Analyzing sales data for the suggestions of strategies to improve sales. In this project, I developed a <b>Dashboard</b> using Power BI to help the Sales and Marketing teams discover insights for better customer targeting and imporved sales.</p>
+
+            <h4>Business Question</h4>
+            <p>Sales Performance:
+What is the total amount of sales?
+What is the total profit generated?
+How many items were sold in total?
+What is the average amount and profit per order?
+
+<p>Category and Sub-Category Analysis:
+Which categories and sub-categories are the most popular in terms of sales?
+Which categories and sub-categories generate the most profit?
+Are there any seasonal trends in sales for different categories?
+
+<p> For understanding pattern related to Methods of Payment:
+What are the preferred payment modes for customers?
+Do certain payment modes correlate with higher order amounts or profits?</p>
+
+<p>Customer Analysis:
+How many unique customers have made purchases?
+What is the average number of orders per customer?
+Are there any repeat customers, and if so, how often do they make purchases?</p>
+
+<p> For understanding Sales across Geographical areas:
+Which states or cities have the highest sales?
+Are there any regional trends in product preferences or order frequency?</p>
+
+<p> For understanding purshasing decison through time:
+How do sales vary over different months or seasons?
+Are there any specific days of the week when sales peak?
+Is there any correlation between order date and order amount/profit?</p>
+
+Profitability Analysis:
+Which products or categories have the highest profit margins?
+Are there any products that are not profitable and might need to be reconsidered?
+</p>
+        </div>
+
+        <!-- SECTION: DATA PREPARATION AND PREPROCESSING -->
+
+        <div class="section">
+            <h2>Data</h2>
+            <p>You can download the dataset <a href="https://raw.githubusercontent.com/isaac-ik/Analysis/main/Sales%20Analysis/Details.csv">here</a> and <a href="https://raw.githubusercontent.com/isaac-ik/Analysis/main/Sales%20Analysis/Orders.csv">here</a></p>
+        </div>
+
+        <div class="container img">
+            <h4>Snapshot of Order Data</h4>
+            <img src="https://github.com/isaac-ik/Analysis/blob/main/Sales%20Analysis/Orders.png?raw=true" alt="Image 1">
+            <div style="width: 20px;"></div>
+            <h4>Snapshot of Details Data</h4>
+            <img src="https://github.com/isaac-ik/Analysis/blob/main/Sales%20Analysis/details.png?raw=true" alt="Image 2">
+        </div>
+
+        <!-- SECTION: MODEL DEVELOPMENT -->
+        <div class="section">
+            <h2>Processing</h2>
+            <p><b>Data Transformation:</b> checked for missing values, and made a row modification for the headers.</p>
+            <p><b>Data Modeling:</b> created relationship between Details and Order table, and setting up measures for aggregations.</p>
+            <p><b>Thinking of Questions:</b> Utilized the  above Business questions to guide the analysis/visual selection, including the key metrics and dimensions to explore.</p>
+            <p><b>Analysis and Insights:</b> Summarized the key insights derived from the data analysis, including any trends, patterns, or anomalies discovered. used DAX in settinng up several metrics</p>
+            <p><b>Setting Charts and Measures:</b>Selected and configured the thought-out charts and measures to answer the questions identified.</p>
+
+        </div>
+
+        <!-- SECTION: RePORT AND DASHBOARD -->
+        <div class="section">
+            <h2>Dashboard</h2>
+        <div class="container2 img">
+            <img src="https://github.com/isaac-ik/Analysis/blob/main/Sales%20Analysis/Screenshot%202024-05-10%20131028.png?raw=true" alt="Image"></div>
+            <h6>* EMI - popularly known as Monthly Installment</h6>       
+            <h6>* UPI - popularly known as Mobile Bank Transfer.</h6>
+
+            <p>View the Interactive Dashboard <a href="https://app.powerbi.com/groups/me/reports/e695cd09-5f2c-4fe5-9544-529ba807aa2a/ReportSection?bookmarkGuid=688595a9-a5b1-4455-a2b6-13be06463f07&bookmarkUsage=1&ctid=5569f185-d22f-4e13-9850-ce5b1abcd2e8&portalSessionId=5202f0d6-ead7-4dfc-af75-0191f4107303&fromEntryPoint=export">here</a></p>
+        </div>
+
+        <!-- SECTION: BUSINESS IMPACT -->
+        <div class="section">
+            <h2>Insights</h2>
+            <p><b>Total Sales and Profit:</b> The total amount of sales was USD 437.77K, with a total profit of USD 36.99K.</p>
+            <p><b>Number of Items Sold:</b> A total of 5616 units were sold.</p>
+            <p><b>Popular Categories and Sub-Categories:</b> The most popular categories in terms of sales were Electronics and Printers. The product class with the highest sales was Printers, generating about USD 59.25K in revenue.</p>
+            <p><b>Most Profitable Category:</b> The most profitable category was Clothing, exceeding the Electronics category by a small margin.</p>
+            <p><b>Seasonal Trends:</b> Sales exhibited seasonal trends, with the highest sales occurring in the first quarter of the year, followed by a decline in the second and third quarters, and a gradual rise again in the fourth quarter.</p>
+            <p><b>Payment Analysis:</b> The preferred payment mode for customers was Cash on Delivery (COD), accounting for over 47% of the transactions.</p>
+            <p><b>Customer Analysis:</b> There were 336 unique customers, with an average of 4.46 orders per customer.</p>
+            <p><b>Geographical Analysis:</b> The top 5 cities contributing to sales were Indore, Mumbai, Pune, Mathura, and Bhopal, with a total contribution of over USD 218K.</p>
+        </div>
+
+        <!-- SECTION: FUTRUE STEPS -->
+        <div class="section">
+            <h2>Future Steps</h2>
+            <h4>Possible strategy directions</h4>
+            <p><b>Focus on High Performing Categories:</b> Allocate more marketing resources and promotional efforts towards the Electronics, Printers, and Clothing categories, as they are the most popular and profitable.</p>
+            <p><b>Seasonal Marketing Campaigns:</b> Launch targeted marketing campaigns that align with seasonal trends, such as offering discounts on Electronics and Printers in the first quarter when sales are high, and focusing on other categories during the slower quarters (Q2, Q3).</p>
+            <p><b>Payment Mode Incentives:</b> Given Cash on Delivery (COD) is the preferred payment mode, consider offering incentives or discounts for customers who choose a digital payment method as its is not safe for the company to have a large amount of cash within its premises.</p>
+            <p><b>Geographical customer targeting:</b> Deploy marketing messages and promotions to the top-performing cities, Indore, Mumbai, Pune, Mathura, and Bhopal, to further increase sales in these regions.</p>
+            <p><b>Inventory Management:</b> Regular stocking of our popular products and decrease stocking of less popular products are minimized to reduce costs and improve profitability.</p>
+        </div>
+
+    </div>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.24.1/prism.min.js"></script>
+</body>
+</html>
