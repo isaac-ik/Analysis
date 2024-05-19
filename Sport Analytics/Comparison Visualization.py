@@ -1,10 +1,7 @@
 import numpy as np
 import pandas as pd
 import matplotlib.pyplot as plt
-import seaborn as sns
 import streamlit as st
-import requests
-
 # ---------------------------------------- FUNCTIONS ---------------------------------------------------#
 
 def plot_team_performance(team1, team2=None):
