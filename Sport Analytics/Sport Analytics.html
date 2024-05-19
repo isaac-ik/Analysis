@@ -1,0 +1,321 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Football Analytics Project by Isaac Ikhaiduwor</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f7f7f7;
+        }
+
+        .container {
+            max-width: 800px;
+            margin: 50px auto;
+            padding: 20px;
+            background-color: #fff;
+            border-radius: 5px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        }
+
+        .container img {
+          max-width: 100%;
+          height: auto;
+          display: block;
+          margin: 0 auto; /* Center the image horizontally */
+        }
+
+        h1 {
+            color: #333;
+            font-size: 28px;
+            margin-bottom: 20px;
+        }
+
+        h2 {
+            color: #333;
+            font-size: 24px;
+            margin-bottom: 15px;
+        }
+
+        p {
+            line-height: 1.6;
+            margin-bottom: 10px;
+        }
+
+        .section {
+            margin-bottom: 30px;
+        }
+
+        .section-title {
+            font-size: 20px;
+            font-weight: bold;
+            margin-bottom: 10px;
+        }
+
+        .section-content {
+            margin-left: 20px;
+        }
+        /*
+         CSS for the main interaction
+        */
+        .accordion > input[name="collapse"] {
+          display: none;
+        }
+
+        .accordion .content {
+          background: #fff;
+          overflow: hidden;
+          height: 0;
+          transition: height 0.5s;
+          box-shadow: 1px 2px 4px rgba(0, 0, 0, 0.3);
+        }
+
+        .accordion > input[name="collapse"]:checked ~ .content {
+          height: auto;
+          transition: 0.5s;
+        }
+
+        .accordion label {
+          display: block;
+        }
+
+        @media only screen and (min-width: 620px){
+          .accordion > input[name="collapse"]:checked ~ .content {
+            height: auto;
+          }
+        }
+
+        .accordion {
+          margin-bottom: 1em;
+        }
+
+        .accordion h4{
+          margin-bottom: 0px;
+        }
+
+        .accordion label {
+            display: block;
+          background-color: #fff;
+          color: #000;
+          cursor: pointer;
+          font-weight: normal;
+          padding: 10px;
+          user-select: none;
+          position: relative;
+          border: 1px solid #ddd;
+        }
+
+        .accordion label:hover,
+        .accordion label:focus {
+          background: #eee;
+        }
+
+        .accordion .handle label:before {
+          font-family: Arial, sans-serif;
+          content: "\25B6"; /* Unicode for a right-pointing arrow */
+          display: inline-block;
+          margin-right: 10px;
+          font-size: 1em;
+          line-height: 1.556em;
+          vertical-align: middle;
+          transition: transform 0.4s
+        }
+
+        .accordion > input[name="collapse"]:checked ~ .handle label:before {
+            transform: rotate(90deg);
+            transition: 0.4s;
+        }
+    </style>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.24.1/themes/prism.min.css">
+</head>
+<body>
+    <div class="container">
+        <h1>FOOTBALL TEAMS PERFORMANCE ANALYSTICS</h1>
+
+        <div class="section">
+            <p>Author: Isaac Ikhaiduwor</p>
+            <p>In this project, I developed a <b>Performance Dashboard</b> using Python, and other libaries to help teams, leagues, media organizations, betting operators make optimal decisions based on the performance of teams in the Premier league</p>
+
+
+            <h4>Possible Analysis</h4>
+            <p>Team Performance, Goals, Streak, Discipline of Teams, and Comparsion between teams</p>
+        </div>
+
+        <!-- SECTION: DATA GATHERING -->
+
+        <div class="section">
+            <h2>DATA GATHERING</h2>
+            <p>Developed automated scripts to gather data from <a href="https://rapidapi.com/api-sports/api/api-football">API-football</a>, a freemium sports APIs.</p>
+            <section class="accordion">
+                <input type="checkbox" name="collapse" id="handle4" checked="checked">
+                <h4 class="handle">
+                    <label for="handle4">Code Snippet</label>
+                </h4>
+                <div class="content">
+                    <pre><code class="language-python">import requests, json, pandas as pd
+
+url = "https://api-football-v1.p.rapidapi.com/v3/teams/statistics"
+
+headers = {
+    "X-RapidAPI-Key": "REMOVED INTENTIONALLY"
+    "X-RapidAPI-Host": "api-football-v1.p.rapidapi.com"
+}
+def download_team_info(teamID, TeamName):
+    querystring = {"league":"39","season":"2023","team":teamID}
+    response = requests.get(url, headers=headers, params=querystring)
+    print(response.json())
+    TeamFile = f"TeamsFile/{TeamName}.txt"
+    with open(TeamFile, "wb") as file:
+        file.write(response.content)
+
+# Import Team name and Id from Team of League.csv
+df = pd.read_csv("Team of League.csv")
+
+# Iterate through the League table
+for index, row in df.iterrows():
+    TeamID = str(row['id']) # get Team ID
+    TeamName = row['name'] 
+    # Download the team info using Id
+    download_team_info(TeamID, TeamName) </code></pre>
+                </div>
+        </div>
+
+        <!-- SECTION: DATA PROCESSING -->
+
+        <div class="section">
+            <h2>Data processing</h2>
+            <p>Tools Used: Libraries: json, pandas </p>
+            The data processing workflow:
+            <ul>
+            <li>Converted the initial JSON data from the response into a dictionary to extract the useful information.</li>
+            <li>Flattened the nested dictionary to simplify the data structure, making it easier to convert into a dataframe.</li>
+            <li>Converted the flattened dictionary into a pandas DataFrame, which provides a tabular format suitable for various data processing tasks.</li>
+            <li>Compiled each team's dataframe into a single, comprehensive table, ensuring all relevant information is consolidated for further analysis.</li>
+            <li>Exported compiled DataFrame to a CSV file, TeamsStat.csv, which serves as the final output for subsequent processing and analysis.</li>
+        </ul>
+            <section class="accordion">
+                <input type="checkbox" name="collapse" id="handle5" checked="checked">
+                <h4 class="handle">
+                    <label for="handle5">Code Snippet</label>
+                </h4>
+                <div class="content">
+                    <pre><code class="language-python">import pandas as pd, json
+def flatten_dict(d, parent_key='', sep='_'):
+    items = []
+    for key, value in d.items():
+        new_key = f"{parent_key}{sep}{key}" if parent_key else key
+        if type(value) == dict:
+            items.extend(flatten_dict(value, new_key, sep=sep).items())
+        else:
+            items.append((new_key, value))
+    return dict(items)
+    
+
+def convert_to_dataFrame(teamStats):
+    # Flatten nested dictionary
+    flat_data = flatten_dict(teamStats)
+    # Convert the flattened dictionary to a DataFrame
+    df = pd.DataFrame([flat_data])
+    return df
+
+    
+def convert_to_csv(dataframe):
+    df_csv = dataframe.to_csv()
+    with open("TeamsStat.csv", 'wb') as file:
+        file.write(df_csv.encode('utf-8'))
+
+def get_team_info(leagueInfo, index):
+    # get name
+    TeamID = str(leagueInfo['id'][index]) # get Team ID
+    TeamName = leagueInfo['name'][index]
+    # get team file
+    path = f"TeamsFile/{TeamName}.txt"
+    with open(path, 'r') as file:
+        jsonfile = file.read()
+    dictformat = json.loads(jsonfile)
+    d = dictformat["response"]
+    return d
+
+
+# ---------------------------------- MAIN ------------------------#
+
+df = pd.read_csv("Team of League.csv")
+leagueInfo = df.to_dict()
+
+# Create an empty dataTable
+LeagueTeamsdf = pd.DataFrame()
+
+# Total
+total = len(df)
+
+
+for TeamIndex in range(0, total, 1):
+    # get team info as a dictionary
+    teamDet = get_team_info(leagueInfo,TeamIndex)
+    # Convert the dictionary to a DataFrame
+    dataframe = convert_to_dataFrame(teamDet)
+    # append to the league table
+    LeagueTeamsdf = pd.concat([LeagueTeamsdf, dataframe], ignore_index=True, sort=False)
+    # convert to csv
+    convert_to_csv(LeagueTeamsdf)</code></pre>
+                </div>
+        </div>
+
+        <div class="section">
+        <h4>Understanding the Data</h4>
+            <ul>
+                <li><strong>team_id</strong>: Unique identifier for each team.</li>
+                <li><strong>team_name</strong>: Name of the team.</li>
+                <li><strong>form</strong>: Recent performance of the team, usually represented as a string of results (e.g., WWDLL).</li>
+                <li><strong>fixtures_played_home</strong>: Number of matches played at home.</li>
+                <li><strong>fixtures_played_away</strong>: Number of matches played away.</li>
+                <li><strong>fixtures_played_total</strong>: Total number of matches played.</li>
+                <li><strong>fixtures_wins_home</strong>: Number of matches won at home. etc</li>
+            </ul>
+        </div>
+
+        <div class="container img">
+            <h4>Dataset</h4>
+            <img src="[SCREENSHOT OF DATASET LINK HERE]" alt="Image">
+        </div>
+        </div>
+
+        <!-- SECTION: MODEL DEVELOPMENT -->
+        <div class="section">
+            <h2>Model Development</h2>
+            <p>[TEXT HERE]</p>
+        </div>
+        <h3>Code Snippet</h3>
+        <pre><code class="language-python">[CODE]</code></pre>
+        
+        <div class="container img">
+            <h4>Image Heading</h4>
+            <img src="[IMAGE LINK]" alt="Image">
+        </div>
+
+        <!-- SECTION: MODEL EVLAUTION -->
+        <div class="section">
+            <h2>Model Evaluation and Prediction</h2>
+            <p>[TEXT]</p>
+        <div class="container img">
+            <h4>Image Heading</h4>
+            <img src="[IMAGE LINK]" alt="Image"></div>
+        </div>
+
+        <!-- SECTION: BUSINESS IMPACT -->
+        <div class="section">
+            <h2>Business Impact</h2>
+            <p>[TEXT HERE]</p>
+        </div>
+
+        <!-- SECTION: FUTRUE STEPS -->
+        <div class="section">
+            <h2>Future Steps</h2>
+            <p>[TEXT HERE]. Full code is <a href="[LINK TO FULL CODE]">here</a></p>
+        </div>
+
+    </div>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.24.1/prism.min.js"></script>
+</body>
+</html>
