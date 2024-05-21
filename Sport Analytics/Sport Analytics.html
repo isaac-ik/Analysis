@@ -73,18 +73,13 @@
 
         .accordion > input[name="collapse"]:checked ~ .content {
           height: auto;
-          transition: 0.5s;
         }
 
         .accordion label {
           display: block;
         }
 
-        @media only screen and (min-width: 620px){
-          .accordion > input[name="collapse"]:checked ~ .content {
-            height: auto;
-          }
-        }
+       
 
         .accordion {
           margin-bottom: 1em;
@@ -139,7 +134,24 @@
 
 
             <h4>Possible Analysis</h4>
-            <p>Team Performance, Goals, Streak, Discipline of Teams, and Comparsion between teams</p>
+            <p>1. Team Performance Analysis:
+   - Compared  and visualized the number of wins, draws, and losses for each team.</p>
+
+<p>2. Goal Analysis:
+   - Analyzed the distribution of goals scored and conceded in different time intervals.
+   - Compared the number of clean sheets (matches without conceding goals) for each team.</p>
+
+<p>3. Streak Analysis:
+   - Identified and analyzed the longest winning, drawing, and losing streaks for each team.
+   - Compared the biggest wins and losses at home and away for each team.</p>
+
+<p>4. Discipline Analysis:
+   - Visualized the distribution of yellow and red cards received by each team in different time intervals.</p>
+
+<p>5. Comparison between Teams:
+   - Used bar charts to compare different statistics (e.g., goals scored, clean sheets, cards received) for multiple teams.
+   - Created a <b>dashboard</b> using streamlit to visualize various aspects of team performance side by side for easy comparison.
+</p>
         </div>
 
         <!-- SECTION: DATA GATHERING -->
@@ -148,7 +160,7 @@
             <h2>DATA GATHERING</h2>
             <p>Developed automated scripts to gather data from <a href="https://rapidapi.com/api-sports/api/api-football">API-football</a>, a freemium sports APIs.</p>
             <section class="accordion">
-                <input type="checkbox" name="collapse" id="handle4" checked="checked">
+                <input type="checkbox" name="collapse" id="handle4">
                 <h4 class="handle">
                     <label for="handle4">Code Snippet</label>
                 </h4>
@@ -195,7 +207,7 @@ for index, row in df.iterrows():
             <li>Exported compiled DataFrame to a CSV file, TeamsStat.csv, which serves as the final output for subsequent processing and analysis.</li>
         </ul>
             <section class="accordion">
-                <input type="checkbox" name="collapse" id="handle5" checked="checked">
+                <input type="checkbox" name="collapse" id="handle5">
                 <h4 class="handle">
                     <label for="handle5">Code Snippet</label>
                 </h4>
