@@ -62,9 +62,24 @@
         .accordion > input[name="collapse"] {
           display: none;
         }
+        /*
+            FOR CODE
+            */
+        pre {
+          background-color: #1e1e1e; /* Dark background color */
+          color: #dcdcdc; /* Light text color */
+          padding: 10px;
+          border-radius: 5px;
+          overflow: auto;
+        }
+
+        code {
+          font-family: 'Courier New', Courier, monospace;
+        }
 
         .accordion .content {
-          background: #fff;
+          background: #1e1e1e;
+          color: #dcdcdc;
           overflow: hidden;
           height: 0;
           transition: height 0.5s;
@@ -79,7 +94,6 @@
           display: block;
         }
 
-       
 
         .accordion {
           margin-bottom: 1em;
@@ -121,6 +135,7 @@
             transform: rotate(90deg);
             transition: 0.4s;
         }
+        
     </style>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.24.1/themes/prism.min.css">
 </head>
@@ -156,7 +171,8 @@
 
         <!-- SECTION: DATA GATHERING -->
 
-        <div class="section">
+        <div class="Container">
+            <section class="section">
             <h2>DATA GATHERING</h2>
             <p>Developed automated scripts to gather data from <a href="https://rapidapi.com/api-sports/api/api-football">API-football</a>, a freemium sports APIs.</p>
             <section class="accordion">
@@ -191,6 +207,8 @@ for index, row in df.iterrows():
     # Download the team info using Id
     download_team_info(TeamID, TeamName) </code></pre>
                 </div>
+            </section>
+        </section>
         </div>
 
         <!-- SECTION: DATA PROCESSING -->
@@ -284,6 +302,7 @@ for TeamIndex in range(0, total, 1):
                 <li><strong>fixtures_played_away</strong>: Number of matches played away.</li>
                 <li><strong>fixtures_played_total</strong>: Total number of matches played.</li>
                 <li><strong>fixtures_wins_home</strong>: Number of matches won at home. etc</li>
+                <p>Note: this project was done before the last matchday of the 2023/24 session. Stats may have changed at the time you're viewing this.
             </ul>
         </div>
 
@@ -302,7 +321,9 @@ for TeamIndex in range(0, total, 1):
             <img src="https://github.com/isaac-ik/Analysis/blob/main/Sport%20Analytics/imag/Goal%20Analysis.png?raw=true" alt="Image"> <img src="https://github.com/isaac-ik/Analysis/blob/main/Sport%20Analytics/imag/Team%20Performance%20Analysis.png?raw=true" alt="Image">
             <p></p>
             <img src="https://github.com/isaac-ik/Analysis/blob/main/Sport%20Analytics/imag/Screenshot%202024-05-19%20024435.png?raw=true" alt="Image">
-            <p>The Interactive comparsion Viuslaization can be seen <a href="https://analysis-cb337s2v4praegdgwwe99h.streamlit.app/">here</a>, a freemium sports APIs.</p>
+            <p></p>
+            <img src="https://github.com/isaac-ik/Analysis/blob/main/Sport%20Analytics/imag/Streak%20Analysis.png?raw=true" alt="Image">
+            <p>The Interactive comparsion Viuslaization can be seen <a href="https://analysis-cb337s2v4praegdgwwe99h.streamlit.app/">here</a></p>
         </div>
 
     </div>
