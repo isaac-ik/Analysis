@@ -3,6 +3,9 @@ Author: Isaac Ikhaiduwor
 
 In this project, I developed a Performance Dashboard using Python, and other libaries to help teams, leagues, media organizations, betting operators make optimal decisions based on the performance of teams in the Premier league
 
+<img width="928" alt="club comparison visualization" src="https://github.com/user-attachments/assets/b1e22156-91eb-4087-891c-2fe0f8404f01" />
+
+
 Possible Analysis
 1. Team Performance Analysis: - Compared and visualized the number of wins, draws, and losses for each team.
 
