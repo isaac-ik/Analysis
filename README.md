@@ -1,7 +1,7 @@
 Analysis Repository
 ===================
 
-This repository contains two individual projects developed as part of my coursework, each focused on data analysis and visualization. The projects explore sales performance analytics and football team performance analytics, showcasing data processing, visualization, and insights generation using Python and Power BI.
+This repository contains two individual projects developed as part of my personal projects, each focused on data analysis and visualization. The projects explore sales performance analytics and football team performance analytics, showcasing data processing, visualization, and insights generation using Python and Power BI.
 
 Project 1: Football Teams Performance Analytics
 -----------------------------------------------
