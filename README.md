@@ -137,13 +137,13 @@ How to Use This Repository
 1.  **Clone the Repository:**
 
     ```
-    git clone https://github.com/isaac-ik/Analysis-Repo.git
+    git clone https://github.com/isaac-ik/Analysis.git
     ```
 
 2.  **Navigate to the Project Directory:**
 
     ```
-    cd Analysis-Repo
+    cd Analysis
     ```
 
 3.  **For Football Analytics:**
