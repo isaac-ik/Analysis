@@ -129,6 +129,7 @@ This project involves analyzing sales data and developing a **Power BI Dashboard
 -   **Python (pandas, json)** for data preprocessing and cleaning.
 
 * * * * *
+<img width="928" alt="PowerBI dashboard" src="https://github.com/isaac-ik/Analysis/blob/main/Sales%20Analysis/Screenshot%202024-05-15%20095306.png" />
 
 How to Use This Repository
 --------------------------
