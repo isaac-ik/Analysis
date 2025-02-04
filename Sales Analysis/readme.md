@@ -2,8 +2,8 @@ Project 2: Sales Performance Analytics
 --------------------------------------
 * * * * *
 ### Interactive Report
-[![View Interactive Power BI Report](https://img.shields.io/badge/PowerBI-Interactive%20Dashboard-blue?style=for-the-badge&logo=powerbi)]([https://app.powerbi.com/view?r=xxxx](https://app.powerbi.com/groups/me/reports/e695cd09-5f2c-4fe5-9544-529ba807aa2a/ReportSection?experience=power-bi
-))
+[![View Interactive Power BI Report](https://img.shields.io/badge/PowerBI-Interactive%20Dashboard-blue?style=for-the-badge&logo=powerbi)](https://app.powerbi.com/view?r=xxxx](https://app.powerbi.com/groups/me/reports/e695cd09-5f2c-4fe5-9544-529ba807aa2a/ReportSection?experience=power-bi
+)
 
 
 
