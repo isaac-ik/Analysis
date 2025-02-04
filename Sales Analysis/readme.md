@@ -1,6 +1,12 @@
 Project 2: Sales Performance Analytics
 --------------------------------------
 * * * * *
+### Interactive Report
+[![View Interactive Power BI Report](https://img.shields.io/badge/PowerBI-Interactive%20Dashboard-blue?style=for-the-badge&logo=powerbi)]([https://app.powerbi.com/view?r=xxxx](https://app.powerbi.com/groups/me/reports/e695cd09-5f2c-4fe5-9544-529ba807aa2a/ReportSection?experience=power-bi
+))
+
+
+
 <img width="928" alt="PowerBI dashboard" src="https://github.com/isaac-ik/Analysis/blob/main/Sales%20Analysis/Screenshot%202024-05-15%20095306.png" />
 
 This project involves analyzing sales data and developing a **Power BI Dashboard** to assist Sales and Marketing teams in making data-driven decisions for improved customer targeting and increased sales.
